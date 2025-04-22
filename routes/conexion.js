@@ -54,7 +54,7 @@ router.post('/pago', (req, res) => {
 
             // Insertar la transacción en la tabla Transferencias
             const insertQuery = `
-                INSERT INTO Transferencias (nombre, identificacion, numero_tarjeta, cvv, descripcion, monto_pagar)
+                INSERT INTO transferencias (nombre, identificacion, numero_tarjeta, cvv, descripcion, monto_pagar)
                 VALUES (?, ?, ?, ?, ?, ?)
             `;
             connection.query(insertQuery, [nombre, identificacion, numero_tarjeta, cvv, descripcion, monto_a_pagar], (insertErr) => {
